@@ -1,0 +1,63 @@
+{
+  "name": "toggl-cli",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "dev": "vite --mode app",
+    "build": "npm-run-all -s build:app build:worker",
+    "build:app": "vite build --mode app",
+    "build:worker": "vite build",
+    "clean": "rimraf dist",
+    "preview": "vite preview",
+    "lint": "biome lint --write",
+    "lint:legacy": "eslint --fix .",
+    "format": "biome format --write",
+    "check": "biome check --write",
+    "typecheck": "tsc --project tsconfig.json --pretty --noEmit",
+    "check:all": "npm-run-all -s typecheck check lint:legacy",
+    "test": "vitest"
+  },
+  "engines": {
+    "npm": "Please use the bun.",
+    "yarn": "Please use the bun.",
+    "pnpm": "Please use the bun."
+  },
+  "dependencies": {
+    "effect": "^3.8.4",
+    "react": "^18.3.1",
+    "remeda": "^2.14.0",
+    "ts-pattern": "^5.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.2",
+    "@cspell/eslint-plugin": "^8.14.4",
+    "@eslint/js": "^9.11.1",
+    "@tsd/typescript": "^5.6.2",
+    "@types/bun": "latest",
+    "@types/eslint": "^9.6.1",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.10",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.11.1",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import-x": "^4.3.0",
+    "eslint-plugin-sonarjs": "^2.0.2",
+    "globals": "^15.9.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "5.5.4",
+    "typescript-eslint": "^8.7.0",
+    "vite": "^5.4.8",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.1"
+  },
+  "module": "index.ts"
+}
